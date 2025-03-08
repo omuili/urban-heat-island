@@ -1,3 +1,4 @@
+// app/api/data/route.ts
 import { NextResponse } from "next/server"
 import fs from "fs"
 import path from "path"
@@ -15,23 +16,33 @@ export async function GET(request: Request) {
 
   const filePath = path.join(process.cwd(), "data", `${dataset}.csv`)
 
+  // Check if file exists
   if (!fs.existsSync(filePath)) {
-    return NextResponse.json({ error: "Dataset not found" }, { status: 404 })
+    console.error(`File not found: ${filePath}`)
+    return NextResponse.json({ error: "Dataset not found", path: filePath }, { status: 404 })
   }
 
-  return new Promise((resolve) => {
-    const results: any[] = []
-    fs.createReadStream(filePath)
-      .pipe(csv())
-      .on("data", (data) => {
-        if (!city || data.city === city) {
-          results.push(data)
-        }
-      })
-      .on("end", () => {
-        const limitedResults = limit ? results.slice(-limit) : results
-        resolve(NextResponse.json(limitedResults))
-      })
-  })
+  try {
+    return new Promise((resolve) => {
+      const results: any[] = []
+      fs.createReadStream(filePath)
+        .pipe(csv())
+        .on("data", (data) => {
+          if (!city || data.city === city) {
+            results.push(data)
+          }
+        })
+        .on("end", () => {
+          const limitedResults = limit ? results.slice(-limit) : results
+          resolve(NextResponse.json(limitedResults))
+        })
+        .on("error", (error) => {
+          console.error("Error reading CSV:", error)
+          resolve(NextResponse.json({ error: "Error reading dataset" }, { status: 500 }))
+        })
+    })
+  } catch (error) {
+    console.error("API error:", error)
+    return NextResponse.json({ error: "Internal server error" }, { status: 500 })
+  }
 }
-
