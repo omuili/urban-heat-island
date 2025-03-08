@@ -9,48 +9,53 @@ interface CityComparisonProps {
 }
 
 export default function CityComparison({ data, cities }: CityComparisonProps) {
-  // Process data to get average temperatures by month for each city
-  const processedData = data.reduce((acc: any[], item) => {
+  // Group and calculate monthly averages
+  const monthlyData = data.reduce((acc: any[], item) => {
     const date = new Date(item.date)
     const month = date.toLocaleString("default", { month: "short" })
-    const city = item.city
-    const temp = Number(item.temperature)
+    const year = date.getFullYear()
+    const key = `${month}-${year}`
 
-    const existingEntry = acc.find((entry) => entry.month === month)
-    if (existingEntry) {
-      if (!existingEntry[`${city}_count`]) {
-        existingEntry[`${city}_count`] = 0
-        existingEntry[`${city}_sum`] = 0
+    // Find or create entry for this month
+    let entry = acc.find((e) => e.key === key)
+    if (!entry) {
+      entry = {
+        key,
+        month,
+        year,
+        monthIndex: date.getMonth(),
       }
-      existingEntry[`${city}_count`]++
-      existingEntry[`${city}_sum`] += temp
-      existingEntry[city] = existingEntry[`${city}_sum`] / existingEntry[`${city}_count`]
-    } else {
-      const newEntry: any = { month }
-      cities.forEach((c) => {
-        newEntry[`${c}_count`] = 0
-        newEntry[`${c}_sum`] = 0
+      // Initialize temperature sums and counts for each city
+      cities.forEach((city) => {
+        entry[`${city}_sum`] = 0
+        entry[`${city}_count`] = 0
+        entry[city] = null
       })
-      newEntry[`${city}_count`] = 1
-      newEntry[`${city}_sum`] = temp
-      newEntry[city] = temp
-      acc.push(newEntry)
+      acc.push(entry)
     }
+
+    // Add temperature data
+    if (item.temperature && !isNaN(Number(item.temperature))) {
+      entry[`${item.city}_sum`] += Number(item.temperature)
+      entry[`${item.city}_count`] += 1
+      entry[item.city] = entry[`${item.city}_sum`] / entry[`${item.city}_count`]
+    }
+
     return acc
   }, [])
 
-  // Sort months chronologically
-  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-  const sortedData = processedData.sort((a, b) => months.indexOf(a.month) - months.indexOf(b.month))
+  // Get the most recent year's data
+  const latestYear = Math.max(...monthlyData.map((item) => item.year))
+  const chartData = monthlyData.filter((item) => item.year === latestYear).sort((a, b) => a.monthIndex - b.monthIndex)
 
-  // Generate unique colors for each city
-  const cityColors = cities.reduce(
-    (acc, city, index) => {
-      acc[city] = `hsl(${(index * 360) / cities.length}, 70%, 50%)`
-      return acc
-    },
-    {} as { [key: string]: string },
-  )
+  // Generate colors for each city
+  const cityColors = {
+    "New York": "#FF4136", // Red
+    "Los Angeles": "#FFDC00", // Yellow
+    Chicago: "#2ECC40", // Green
+    Houston: "#0074D9", // Blue
+    Phoenix: "#B10DC9", // Purple
+  }
 
   return (
     <Card>
@@ -60,21 +65,34 @@ export default function CityComparison({ data, cities }: CityComparisonProps) {
       </CardHeader>
       <CardContent>
         <ResponsiveContainer width="100%" height={300}>
-          <LineChart data={sortedData}>
+          <LineChart data={chartData}>
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="month" />
-            <YAxis label={{ value: "°F", angle: -90, position: "insideLeft" }} />
-            <Tooltip formatter={(value: number) => [`${value.toFixed(1)}°F`, "Temperature"]} />
+            <XAxis dataKey="month" padding={{ left: 20, right: 20 }} />
+            <YAxis
+              label={{
+                value: "Temperature (°F)",
+                angle: -90,
+                position: "insideLeft",
+                style: { textAnchor: "middle" },
+              }}
+              domain={["auto", "auto"]}
+            />
+            <Tooltip
+              formatter={(value: number) => [`${value.toFixed(1)}°F`, "Temperature"]}
+              labelFormatter={(label) => `${label}`}
+            />
             <Legend />
             {cities.map((city) => (
               <Line
                 key={city}
                 type="monotone"
                 dataKey={city}
-                stroke={cityColors[city]}
+                name={city}
+                stroke={cityColors[city as keyof typeof cityColors]}
                 strokeWidth={2}
                 dot={{ r: 4 }}
-                activeDot={{ r: 6 }}
+                activeDot={{ r: 8 }}
+                connectNulls
               />
             ))}
           </LineChart>
