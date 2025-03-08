@@ -1,6 +1,6 @@
 # Urban Heat Island Analysis Tool
 
-![Urban Heat Island](https://raw.githubusercontent.com/omuili/urban-heat-island/main/public/uhi-banner.png)
+![Urban Heat Island](public/uhi-banner.png)
 
 An interactive web application for analyzing and visualizing urban heat island effects across different cities. This tool combines Next.js for the frontend interface with Python data processing scripts to provide comprehensive insights into urban climate patterns.
 
