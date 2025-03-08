@@ -1,0 +1,151 @@
+city,year,strategy,implementation_percentage,temperature_reduction,cost
+New York,2020,Green Roofs,10.6,0.73,2090580
+New York,2020,Cool Pavements,20.5,0.46,14745723
+New York,2020,Urban Forestry,18.5,1.85,13546238
+New York,2020,Reflective Roofs,19.6,1.14,18631008
+New York,2020,Water Bodies,19.1,0.72,2259587
+New York,2021,Green Roofs,16.7,0.43,9154592
+New York,2021,Cool Pavements,2.6,0.17,304851
+New York,2021,Urban Forestry,15.4,0.75,9289531
+New York,2021,Reflective Roofs,11.0,0.98,3756129
+New York,2021,Water Bodies,2.7,0.1,1087324
+New York,2022,Green Roofs,7.9,0.66,2774694
+New York,2022,Cool Pavements,24.7,2.14,16134895
+New York,2022,Urban Forestry,12.6,0.88,2900263
+New York,2022,Reflective Roofs,27.9,1.72,25789124
+New York,2022,Water Bodies,24.1,0.66,6525390
+New York,2023,Green Roofs,28.9,1.61,23114789
+New York,2023,Cool Pavements,23.8,1.3,17545819
+New York,2023,Urban Forestry,19.3,0.7,4173068
+New York,2023,Reflective Roofs,23.1,1.04,18331994
+New York,2023,Water Bodies,4.2,0.18,2775890
+New York,2024,Green Roofs,7.2,0.55,4279255
+New York,2024,Cool Pavements,17.6,0.98,10684755
+New York,2024,Urban Forestry,0.0,0.0,3487
+New York,2024,Reflective Roofs,0.3,0.02,235867
+New York,2024,Water Bodies,3.1,0.08,2484027
+New York,2025,Green Roofs,25.8,0.64,23702854
+New York,2025,Cool Pavements,6.9,0.33,3804935
+New York,2025,Urban Forestry,18.7,1.02,15901914
+New York,2025,Reflective Roofs,6.8,0.48,2074244
+New York,2025,Water Bodies,26.6,1.76,5578793
+Los Angeles,2020,Green Roofs,10.3,0.68,1796029
+Los Angeles,2020,Cool Pavements,7.3,0.3,6495202
+Los Angeles,2020,Urban Forestry,13.3,1.17,2460392
+Los Angeles,2020,Reflective Roofs,8.1,0.18,2168754
+Los Angeles,2020,Water Bodies,1.9,0.12,466019
+Los Angeles,2021,Green Roofs,5.4,0.47,3960227
+Los Angeles,2021,Cool Pavements,3.1,0.09,2289203
+Los Angeles,2021,Urban Forestry,24.8,2.13,20470979
+Los Angeles,2021,Reflective Roofs,21.3,0.65,10637096
+Los Angeles,2021,Water Bodies,27.9,2.29,5054443
+Los Angeles,2022,Green Roofs,23.5,1.34,13574175
+Los Angeles,2022,Cool Pavements,2.8,0.1,1391803
+Los Angeles,2022,Urban Forestry,12.8,0.96,6047298
+Los Angeles,2022,Reflective Roofs,11.5,0.46,11464151
+Los Angeles,2022,Water Bodies,17.6,1.16,5018150
+Los Angeles,2023,Green Roofs,6.5,0.16,6309582
+Los Angeles,2023,Cool Pavements,11.9,0.61,10321135
+Los Angeles,2023,Urban Forestry,15.7,0.58,14769242
+Los Angeles,2023,Reflective Roofs,4.7,0.36,829321
+Los Angeles,2023,Water Bodies,6.0,0.54,1224312
+Los Angeles,2024,Green Roofs,19.1,1.33,5426075
+Los Angeles,2024,Cool Pavements,0.5,0.05,273407
+Los Angeles,2024,Urban Forestry,27.8,0.62,14787343
+Los Angeles,2024,Reflective Roofs,18.3,1.51,17468793
+Los Angeles,2024,Water Bodies,26.9,2.65,18956455
+Los Angeles,2025,Green Roofs,2.4,0.19,1852007
+Los Angeles,2025,Cool Pavements,9.4,0.71,2878028
+Los Angeles,2025,Urban Forestry,3.7,0.08,791965
+Los Angeles,2025,Reflective Roofs,22.3,1.02,5297854
+Los Angeles,2025,Water Bodies,25.0,1.27,12052594
+Chicago,2020,Green Roofs,23.8,0.95,11995498
+Chicago,2020,Cool Pavements,11.0,0.3,8871558
+Chicago,2020,Urban Forestry,17.5,1.59,5296451
+Chicago,2020,Reflective Roofs,16.4,1.06,10560477
+Chicago,2020,Water Bodies,25.0,1.06,10618948
+Chicago,2021,Green Roofs,9.1,0.66,8010582
+Chicago,2021,Cool Pavements,13.6,0.55,8641545
+Chicago,2021,Urban Forestry,11.3,0.25,11118923
+Chicago,2021,Reflective Roofs,6.5,0.57,1530495
+Chicago,2021,Water Bodies,3.8,0.3,2766696
+Chicago,2022,Green Roofs,8.4,0.53,1027063
+Chicago,2022,Cool Pavements,21.1,1.81,18326074
+Chicago,2022,Urban Forestry,21.3,2.06,12193124
+Chicago,2022,Reflective Roofs,12.4,0.66,6395829
+Chicago,2022,Water Bodies,12.4,0.85,11539389
+Chicago,2023,Green Roofs,3.9,0.27,2877150
+Chicago,2023,Cool Pavements,1.2,0.03,172180
+Chicago,2023,Urban Forestry,23.4,1.66,13169037
+Chicago,2023,Reflective Roofs,29.1,0.77,16538032
+Chicago,2023,Water Bodies,4.8,0.14,3050765
+Chicago,2024,Green Roofs,16.5,0.4,7970959
+Chicago,2024,Cool Pavements,3.2,0.24,3152798
+Chicago,2024,Urban Forestry,20.8,1.15,16280634
+Chicago,2024,Reflective Roofs,10.2,0.36,3913883
+Chicago,2024,Water Bodies,23.4,1.64,18684835
+Chicago,2025,Green Roofs,12.9,1.12,7729830
+Chicago,2025,Cool Pavements,28.4,2.52,14285469
+Chicago,2025,Urban Forestry,0.1,0.01,45501
+Chicago,2025,Reflective Roofs,4.2,0.09,1177935
+Chicago,2025,Water Bodies,4.8,0.19,2866094
+Houston,2020,Green Roofs,20.2,0.52,17948023
+Houston,2020,Cool Pavements,17.5,0.62,14737930
+Houston,2020,Urban Forestry,15.5,0.86,3442157
+Houston,2020,Reflective Roofs,27.5,2.49,4243255
+Houston,2020,Water Bodies,26.5,1.21,14432769
+Houston,2021,Green Roofs,5.9,0.27,5757130
+Houston,2021,Cool Pavements,0.4,0.03,378715
+Houston,2021,Urban Forestry,28.4,1.74,26633644
+Houston,2021,Reflective Roofs,28.5,1.74,24033078
+Houston,2021,Water Bodies,2.9,0.19,2268135
+Houston,2022,Green Roofs,18.2,1.02,9951379
+Houston,2022,Cool Pavements,6.3,0.23,627911
+Houston,2022,Urban Forestry,6.5,0.48,777993
+Houston,2022,Reflective Roofs,2.5,0.19,589621
+Houston,2022,Water Bodies,24.2,0.56,5419769
+Houston,2023,Green Roofs,9.7,0.46,1481664
+Houston,2023,Cool Pavements,23.4,1.78,14219960
+Houston,2023,Urban Forestry,3.0,0.13,2318734
+Houston,2023,Reflective Roofs,25.9,1.51,21519004
+Houston,2023,Water Bodies,17.8,0.58,8487180
+Houston,2024,Green Roofs,18.1,1.12,9276417
+Houston,2024,Cool Pavements,15.1,0.71,2401793
+Houston,2024,Urban Forestry,1.8,0.15,257416
+Houston,2024,Reflective Roofs,28.1,1.82,26666628
+Houston,2024,Water Bodies,28.7,1.75,26908373
+Houston,2025,Green Roofs,14.1,0.34,11647848
+Houston,2025,Cool Pavements,29.4,1.68,15642378
+Houston,2025,Urban Forestry,3.7,0.37,3020115
+Houston,2025,Reflective Roofs,26.8,1.29,24155720
+Houston,2025,Water Bodies,5.5,0.48,3670716
+Phoenix,2020,Green Roofs,9.1,0.65,7725476
+Phoenix,2020,Cool Pavements,9.1,0.77,3675031
+Phoenix,2020,Urban Forestry,5.3,0.24,5200789
+Phoenix,2020,Reflective Roofs,24.9,2.3,22729091
+Phoenix,2020,Water Bodies,13.8,0.42,6540374
+Phoenix,2021,Green Roofs,9.5,0.91,3547025
+Phoenix,2021,Cool Pavements,16.3,0.36,4040140
+Phoenix,2021,Urban Forestry,29.8,1.97,3194703
+Phoenix,2021,Reflective Roofs,13.5,0.33,3469272
+Phoenix,2021,Water Bodies,6.7,0.17,2527470
+Phoenix,2022,Green Roofs,6.3,0.59,6064896
+Phoenix,2022,Cool Pavements,11.6,0.45,8554687
+Phoenix,2022,Urban Forestry,14.8,0.91,4956648
+Phoenix,2022,Reflective Roofs,2.4,0.09,1031628
+Phoenix,2022,Water Bodies,8.2,0.55,2391996
+Phoenix,2023,Green Roofs,22.5,1.68,5758577
+Phoenix,2023,Cool Pavements,14.2,0.47,5347430
+Phoenix,2023,Urban Forestry,11.7,0.59,8023621
+Phoenix,2023,Reflective Roofs,2.7,0.23,1228067
+Phoenix,2023,Water Bodies,17.3,0.47,13435543
+Phoenix,2024,Green Roofs,26.1,0.54,25542564
+Phoenix,2024,Cool Pavements,23.7,0.73,7520529
+Phoenix,2024,Urban Forestry,26.4,1.38,11854583
+Phoenix,2024,Reflective Roofs,26.2,1.9,5051582
+Phoenix,2024,Water Bodies,5.9,0.32,923324
+Phoenix,2025,Green Roofs,17.6,1.22,11193910
+Phoenix,2025,Cool Pavements,17.3,1.34,12570851
+Phoenix,2025,Urban Forestry,20.1,0.56,8284788
+Phoenix,2025,Reflective Roofs,17.9,0.75,12295603
+Phoenix,2025,Water Bodies,20.8,1.56,7438501
